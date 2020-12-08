@@ -13,6 +13,19 @@
 </head>
 <body>
 
+<?php
+echo "Test de connexion";
+// connect to mongodb
+$m = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+
+$filter = [];
+$options = [];
+
+$query = new MongoDB\Driver\Query($filter, $options);
+$cursor = $m->executeQuery('fdourlens.reception', $query);
+
+?>
+
 <div class="container">
     <h1>LA2 BDD MONGODB</h1>
 </div>
@@ -48,48 +61,26 @@
             <th scope="col">Quantité</th>
             <th scope="col">id_produit</th>
             <th scope="col">id_entrepot</th>
+            <th scope="col">Date</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>40</td>
-            <td>45</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-        </tr>
+
+        <?php foreach ($cursor as $document) {
+        ?>
+            <tr>
+                <th scope="row">1</th>
+                <td><?php echo $document['id_reception'] ?>></td>
+                <td><?php echo $document['quantite_recue'] ?>></td>
+                <td><?php echo $document['id_produit'] ?>></td>
+                <td><?php echo $document['id_entrepot'] ?>></td>
+                <td><?php echo $document['date'] ?>></td>
+            </tr>
+        <?php
+        } ?>
         </tbody>
     </table>
 </div>
-
-<?php
-echo "Test de connexion";
-// connect to mongodb
-$m = new MongoDB\Driver\Manager("mongodb://localhost:27017");
-var_dump($m);
-
-$filter = [];
-$options = [];
-
-$query = new MongoDB\Driver\Query($filter, $options);
-var_dump($query);
-$cursor = $m->executeQuery('fdourlens.reception', $query);
-
-
-foreach ($cursor as $document) {
-    var_dump($document);
-}
-?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
