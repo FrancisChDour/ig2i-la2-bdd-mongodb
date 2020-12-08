@@ -73,6 +73,7 @@
 </div>
 
 <?php
+echo "Test de connexion";
 // connect to mongodb
 $m = new MongoClient();
 echo "Connection to database successfully";
