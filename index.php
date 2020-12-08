@@ -20,22 +20,22 @@
 <div class="container">
     <h2>Ajouter une réception</h2>
     <form class="form-inline">
-        <div class="form-group row">
+        <div class="form-group mb-2">
             <label for="produit" class="form-label">Produit</label>
             <input type="text" class="form-control" id="produit">
             <div id="produitHelp" class="form-text">Id du produit reçu</div>
         </div>
-        <div class="form-group row">
+        <div class="form-group mb-2">
             <label for="quantite" class="form-label">Quantité</label>
             <input type="text" class="form-control" id="quantite">
             <div id="quantiteHelp" class="form-text">Nombre de produits reçus</div>
         </div>
-        <div class="form-group row">
+        <div class="form-group mb-2">
             <label for="entrepot" class="form-label">Entrepôt</label>
             <input type="text" class="form-control" id="quantite">
             <div id="quantiteHelp" class="form-text">Entrepôt de réception</div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
     </form>
 </div>
 
