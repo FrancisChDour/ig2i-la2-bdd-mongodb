@@ -14,7 +14,6 @@
 <body>
 
 <?php
-echo "Test de connexion";
 // connect to mongodb
 $m = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 
@@ -67,14 +66,14 @@ $cursor = $m->executeQuery('fdourlens.reception', $query);
         <tbody>
 
         <?php foreach ($cursor as $document) {
+	$document = (array)$document;
         ?>
             <tr>
-                <th scope="row">1</th>
-                <td><?php echo $document['id_reception'] ?>></td>
-                <td><?php echo $document['quantite_recue'] ?>></td>
-                <td><?php echo $document['id_produit'] ?>></td>
-                <td><?php echo $document['id_entrepot'] ?>></td>
-                <td><?php echo $document['date'] ?>></td>
+                <th scope="row"><?php echo $document['id_reception'] ?></th>
+                <td><?php echo $document['quantite_recue'] ?></td>
+                <td><?php echo $document['id_produit'] ?></td>
+                <td><?php echo $document['id_entrepot'] ?></td>
+                <td><?php echo $document['date'] ?></td>
             </tr>
         <?php
         } ?>
