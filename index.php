@@ -18,17 +18,17 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">id_produit</th>
+            <th scope="col">id_entrepot</th>
         </tr>
         </thead>
         <tbody>
         <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>40</td>
+            <td>45</td>
+            <td>3</td>
         </tr>
         <tr>
             <th scope="row">2</th>
