@@ -19,7 +19,7 @@
 
 <div class="container">
     <h2>Ajouter une réception</h2>
-    <form>
+    <form class="form-inline">
         <div class="mb-3">
             <label for="produit" class="form-label">Produit</label>
             <input type="text" class="form-control" id="produit">
