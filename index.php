@@ -75,19 +75,19 @@
 <?php
 echo "Test de connexion";
 // connect to mongodb
-$m = new MongoClient();
-echo "Connection to database successfully";
+$m = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+var_dump($m);
 
-// select a database
-$db = $m->fdourlens;
-echo "Database mydb selected";
-$collection = $db->reception;
-echo "Collection selected succsessfully";
-$cursor = $collection->find();
-// iterate cursor to display title of documents
+$filter = [];
+$options = [];
+
+$query = new MongoDB\Driver\Query($filter, $options);
+var_dump($query);
+$cursor = $m->executeQuery('fdourlens.reception', $query);
+
 
 foreach ($cursor as $document) {
-    echo $document["quantite_recue"] . "\n";
+    var_dump($document);
 }
 ?>
 
