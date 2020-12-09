@@ -18,6 +18,6 @@ if (!empty($_POST)) {
         default:
             break;
     }
-    header('Location: http://la2-bdd-mongodb/');
+    header('Location: index.php');
     exit();
 }

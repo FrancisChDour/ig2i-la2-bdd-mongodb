@@ -28,7 +28,7 @@ class connectionMongoDB {
      * @param array $filter
      * @return array|null
      */
-    public function executeQuery($table, $filter = []): ?array
+    public function executeQuery($table, $filter = []): array
     {
         $namespace = $this->conf->getDatabase().".".$table;
         $query = new MongoDB\Driver\Query($filter);
