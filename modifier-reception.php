@@ -1,6 +1,11 @@
 <?php
 
-require('modeleMongoDB.php');
+namespace App;
+require('Utils/Autoloader.php');
+
+use App\Database\modeleMongoDB;
+use App\Utils\Autoloader;
+Autoloader::register();
 
 $modele = new modeleMongoDB();
 
