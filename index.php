@@ -69,7 +69,7 @@ $collection = $modele->listReceptions();
                 <td><?php echo $document['idProduit'] ?></td>
                 <td><?php echo $document['idEntrepot'] ?></td>
                 <td><?php echo $document['date'] ?></td>
-		<td><a class="btn btn-primary" href="modifier-reception.php" role="button">Modifier</a></td>
+		<td><a class="btn btn-primary" href="modifier-reception.php?idReception=<?php echo $document['idReception'] ?>" role="button">Modifier</a></td>
 		<td><button type="button" class="btn btn-danger">Supprimer</button></td>
             </tr>
             <?php
