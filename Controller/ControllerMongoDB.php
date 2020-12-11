@@ -36,7 +36,7 @@ if (!empty($_GET)) {
     switch ($_GET['action']) {
         case 'deleteReception':
             $id = new ObjectId($_GET['idReception']);
-
+            var_dump($id);
             $nbDeletedLine = $client->deleteReception($id);
             break;
         default:

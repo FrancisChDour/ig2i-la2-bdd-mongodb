@@ -79,7 +79,7 @@ $columns = array_keys(array_merge(... $collection));
                        href="modifier-reception.php?idReception=<?php echo $document['idReception'] ?>" role="button">Modifier</a>
                 </td>
                 <td><a class="btn btn-danger"
-                       href="controllerMongoDB.php?action=delete&dReception=<?php echo $document['idReception'] ?>"
+                       href="Controller/ControllerMongoDB.php?action=deleteReception&idReception=<?php echo $document['idReception'] ?>"
                        role="button">Supprimer</a></td>
             </tr>
         <?php } ?>
