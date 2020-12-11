@@ -1,0 +1,4 @@
+AuthName "Vous devez vous identifier pour accéder à cette ressource"
+AuthType Basic
+AuthUserFile "/var/www/html/.htpasswd"
+Require valid-user

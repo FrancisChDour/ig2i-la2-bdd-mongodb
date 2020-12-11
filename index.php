@@ -54,6 +54,8 @@ $collection = $modele->listReceptions();
             <th scope="col">id_produit</th>
             <th scope="col">id_entrepot</th>
             <th scope="col">Date</th>
+		<th scope="col"></th>
+		<th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -67,6 +69,8 @@ $collection = $modele->listReceptions();
                 <td><?php echo $document['idProduit'] ?></td>
                 <td><?php echo $document['idEntrepot'] ?></td>
                 <td><?php echo $document['date'] ?></td>
+		<td><a class="btn btn-primary" href="modifier-reception.php" role="button">Modifier</a></td>
+		<td><button type="button" class="btn btn-danger">Supprimer</button></td>
             </tr>
             <?php
         } ?>
