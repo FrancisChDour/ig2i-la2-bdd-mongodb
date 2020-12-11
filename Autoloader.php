@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utils;
+namespace App;
 
 class Autoloader
 {
@@ -11,7 +11,7 @@ class Autoloader
 
     public static function autoload($class)
     {
-        $class = str_replace('App', '', $class);
-        require __DIR__. '/..' . str_replace('\\', '/', $class) . '.php';
+        $class = str_replace('App\\', '', $class);
+        require_once $class . '.php';
     }
 }

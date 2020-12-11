@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Controller;
-require('../Utils/Autoloader.php');
+require('../Autoloader.php');
 
-use App\Utils\Autoloader;
 use App\Database\modeleMongoDB;
 use DateTime;
 use MongoDB\BSON\ObjectId;
+use App\Autoloader;
 
 Autoloader::register();
 if (!empty($_POST)) {
