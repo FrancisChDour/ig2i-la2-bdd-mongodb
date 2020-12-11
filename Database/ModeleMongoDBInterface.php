@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Database;
-interface modeleMongoDBInterface
+interface ModeleMongoDBInterface
 {
     /**
      * List all receptions

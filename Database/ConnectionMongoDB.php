@@ -18,7 +18,7 @@ class ConnectionMongoDB {
      */
     public function __construct($hostname = null,$database = null)
     {
-        $this->conf = new confMongoDB($hostname,$database);
+        $this->conf = new ConfMongoDB($hostname,$database);
 
         if ($hostname !== null) {
             $this->manager = new Manager($hostname);

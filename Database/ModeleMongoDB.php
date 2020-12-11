@@ -1,7 +1,7 @@
 <?php
 namespace App\Database;
 
-class modeleMongoDB implements modeleMongoDBInterface {
+class ModeleMongoDB implements ModeleMongoDBInterface {
 
     protected $connection;
 
@@ -10,7 +10,7 @@ class modeleMongoDB implements modeleMongoDBInterface {
      */
     public function __construct()
     {
-        $this->connection = new connectionMongoDB();
+        $this->connection = new ConnectionMongoDB();
     }
 
     /**

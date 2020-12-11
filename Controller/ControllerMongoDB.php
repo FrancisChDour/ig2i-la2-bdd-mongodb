@@ -10,7 +10,7 @@ use MongoDB\BSON\ObjectId;
 
 Autoloader::register();
 if (!empty($_POST)) {
-    $client = new modeleMongoDB();
+    $client = new ModeleMongoDB();
     switch ($_POST['action']) {
         case 'addReception':
             $date = new DateTime();
@@ -32,11 +32,10 @@ if (!empty($_POST)) {
 }
 
 if (!empty($_GET)) {
-    $client = new modeleMongoDB();
+    $client = new ModeleMongoDB();
     switch ($_GET['action']) {
         case 'deleteReception':
             $id = new ObjectId($_GET['idReception']);
-            var_dump($id);
             $nbDeletedLine = $client->deleteReception($id);
             break;
         default:
