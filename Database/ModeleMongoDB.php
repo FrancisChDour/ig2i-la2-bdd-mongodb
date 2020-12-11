@@ -42,4 +42,9 @@ class modeleMongoDB implements modeleMongoDBInterface {
     {
         return $this->connection->insertInto("reception",$data);
     }
+
+    public function deleteReception($id) : int
+    {
+        return $this->connection->delete("reception",$id);
+    }
 }

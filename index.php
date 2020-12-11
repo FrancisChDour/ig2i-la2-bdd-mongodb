@@ -76,8 +76,8 @@ $collection = $modele->listReceptions();
                 <td><?php echo $document['idProduit'] ?></td>
                 <td><?php echo $document['idEntrepot'] ?></td>
                 <td><?php echo $document['date'] ?></td>
-		        <td><a class="btn btn-primary" href="modifier-reception.php?idReception=<?php echo $document['idReception'] ?>" role="button">Modifier</a></td>
-                <td><a class="btn btn-danger" href="controllerMongoDB.php?action=delete&dReception=<?php echo $document['idReception'] ?>" role="button">Supprimer</a></td>
+		        <td><a class="btn btn-primary" href="./modifier-reception.php?idReception=<?php echo $document['idReception'] ?>" role="button">Modifier</a></td>
+                <td><a class="btn btn-danger" href="./Controller/ControllerMongoDB.php?action=deleteReception&idReception=<?php echo $document['idReception'] ?>" role="button">Supprimer</a></td>
             </tr>
             <?php
         } ?>

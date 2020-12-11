@@ -18,5 +18,10 @@ interface modeleMongoDBInterface
 
 //public function update();
 
-//public function delete();
+    /**
+     * delete a reception
+     * @param $id
+     * @return int
+     */
+public function deleteReception($id) : int;
 }

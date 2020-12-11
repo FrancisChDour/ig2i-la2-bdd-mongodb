@@ -12,7 +12,7 @@ class Autoloader
     public static function autoload($class)
     {
         $class = str_replace('App', '', $class);
-        $class = str_replace('\\', '/', $class);
-        require '.'.$class.'.php';
+//        $class = str_replace('\\', '/', $class);
+        require __DIR__. '/../' . str_replace('\\', '/', $class) . '.php';
     }
 }

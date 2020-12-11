@@ -57,4 +57,16 @@ class ConnectionMongoDB {
         return $result->getInsertedCount();
     }
 
+    public function delete($table,$id)
+    {
+        $namespace = $this->conf->getDatabase().".".$table;
+        $bulk = new BulkWrite;
+        $bulk->delete(['_id' => $id]);
+
+        $result = $this->manager->executeBulkWrite($namespace, $bulk);
+        return $result->getDeletedCount();
+    }
+
+
+
 }
