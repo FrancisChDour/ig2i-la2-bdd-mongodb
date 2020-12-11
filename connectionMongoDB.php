@@ -40,7 +40,7 @@ class connectionMongoDB {
         catch (\MongoDB\Driver\Exception\Exception $e) {
             echo $e->getMessage();
         }
-        return null;
+        return [];
     }
 
     public function insertInto($table,$data)
