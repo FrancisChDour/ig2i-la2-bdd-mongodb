@@ -1,4 +1,7 @@
 
+.htaccess
+.htpasswd
+
 # Created by https://www.toptal.com/developers/gitignore/api/jetbrains,macos,windows,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=jetbrains,macos,windows,linux
 
