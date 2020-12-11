@@ -45,7 +45,7 @@ $modele = new modeleMongoDB();
             <div id="quantiteHelp" class="form-text">Date de réception</div>
         </div>
         <input type="hidden" name="action" value="modifyReception">
-        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        <button type="submit" class="btn btn-primary">Modifier</button>
         <a class="btn btn-primary" href="index.php" role="button">Annuler</a>
     </form>
 </div>
