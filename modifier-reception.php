@@ -22,8 +22,17 @@ $modele = new modeleMongoDB();
 <body>
 
 <div class="container">
+    <h1>LA2 BDD MONGODB</h1>
+</div>
+
+<div class="container">
     <h2>Modifier réception</h2>
     <form class="form-inline" action="controllerMongoDB.php" method="post" name="addReception">
+        <div class="form-group mb-2">
+            <label for="idReception " class="form-label">ID Réception</label>
+            <input type="text" class="form-control" name="id_reception" id="idReception" readonly>
+            <div id="produitHelp" class="form-text">Id du produit reçu</div>
+        </div>
         <div class="form-group mb-2">
             <label for="produit" class="form-label">Produit</label>
             <input type="text" class="form-control" name="id_produit" id="produit">
