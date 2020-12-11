@@ -17,9 +17,13 @@ $collection = $modele->listReceptions();
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>LA2 BDD MONGODB</title>
 </head>
 <body>
+
+<div class="container">
+    <h1>LA2 BDD MONGODB</h1>
+</div>
 
 <div class="container">
     <h2>Ajouter une réception</h2>
@@ -45,7 +49,6 @@ $collection = $modele->listReceptions();
 </div>
 
 <div class="container">
-    <h1>LA2 BDD MONGODB</h1>
     <table class="table">
         <thead>
         <tr>
@@ -69,8 +72,8 @@ $collection = $modele->listReceptions();
                 <td><?php echo $document['idProduit'] ?></td>
                 <td><?php echo $document['idEntrepot'] ?></td>
                 <td><?php echo $document['date'] ?></td>
-		<td><a class="btn btn-primary" href="modifier-reception.php?idReception=<?php echo $document['idReception'] ?>" role="button">Modifier</a></td>
-		<td><button type="button" class="btn btn-danger">Supprimer</button></td>
+		        <td><a class="btn btn-primary" href="modifier-reception.php?idReception=<?php echo $document['idReception'] ?>" role="button">Modifier</a></td>
+                <td><a class="btn btn-primary" href="controllerMongoDB.php?action=delete&dReception=<?php echo $document['idReception'] ?>" role="button">Modifier</a></td>
             </tr>
             <?php
         } ?>
