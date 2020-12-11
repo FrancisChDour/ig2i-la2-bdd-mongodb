@@ -3,7 +3,7 @@
 namespace App\Controller;
 require('../Autoloader.php');
 
-use App\Database\modeleMongoDB;
+use App\Database\ModeleMongoDB;
 use DateTime;
 use MongoDB\BSON\ObjectId;
 use App\Autoloader;

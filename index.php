@@ -3,11 +3,11 @@
 namespace App;
 require('Autoloader.php');
 
-use App\Database\modeleMongoDB;
+use App\Database\ModeleMongoDB;
 
 Autoloader::register();
 
-$modele = new modeleMongoDB();
+$modele = new ModeleMongoDB();
 
 $collection = $modele->listReceptions();
 $columns = array_keys(array_merge(... $collection));
