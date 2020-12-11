@@ -3,7 +3,7 @@
 namespace App\Database;
 
 
-class confMongoDB {
+class ConfMongoDB {
 
     protected $hostname;
     protected $database;

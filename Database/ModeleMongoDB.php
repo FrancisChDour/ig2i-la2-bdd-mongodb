@@ -3,7 +3,7 @@ namespace App\Database;
 
 use MongoDB\BSON\ObjectId;
 
-class modeleMongoDB implements modeleMongoDBInterface {
+class ModeleMongoDB implements ModeleMongoDBInterface {
 
     protected $connection;
 
