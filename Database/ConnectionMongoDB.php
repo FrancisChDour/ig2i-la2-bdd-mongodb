@@ -2,6 +2,7 @@
 
 namespace App\Database;
 
+use MongoDB\BSON\ObjectId;
 use MongoDB\Driver\Manager;
 use MongoDB\Driver\Query;
 use MongoDB\Driver\BulkWrite;
@@ -65,6 +66,19 @@ class ConnectionMongoDB {
 
         $result = $this->manager->executeBulkWrite($namespace, $bulk);
         return $result->getDeletedCount();
+    }
+
+    public function update($table, $data)
+    {
+        $currentId = new ObjectId($data['_id']);
+        unset($data['_id']);
+        $namespace = $this->conf->getDatabase().".".$table;
+        $bulk = new BulkWrite;
+        $bulk->update(['_id' => $currentId], $data);
+
+        $result = $this->manager->executeBulkWrite($namespace, $bulk);
+
+        return $result->getModifiedCount();
     }
 
 

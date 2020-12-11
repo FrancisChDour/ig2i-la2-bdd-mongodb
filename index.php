@@ -76,7 +76,7 @@ $columns = array_keys(array_merge(... $collection));
                     <td><?php if(array_key_exists($column, $document)) echo $document[$column] ?></td>
                 <?php } ?>
                 <td><a class="btn btn-primary"
-                       href="modifier-reception.php?idReception=<?php echo $document['_id'] ?>" role="button">Modifier</a>
+                       href="updateReception.php?idReception=<?php echo $document['_id'] ?>" role="button">Modifier</a>
                 </td>
                 <td><a class="btn btn-danger"
                        href="Controller/ControllerMongoDB.php?action=deleteReception&idReception=<?php echo $document['_id'] ?>"
