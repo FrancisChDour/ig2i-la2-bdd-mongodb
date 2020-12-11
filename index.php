@@ -1,6 +1,12 @@
 <?php
 
-require('modeleMongoDB.php');
+namespace App;
+require('Utils/Autoloader.php');
+
+use App\Database\modeleMongoDB;
+use App\Utils\Autoloader;
+
+Autoloader::register();
 
 $modele = new modeleMongoDB();
 
@@ -23,7 +29,7 @@ $collection = $modele->listReceptions();
 
 <div class="container">
     <h2>Ajouter une réception</h2>
-    <form class="form-inline" action="controllerMongoDB.php" method="post" name="addReception">
+    <form class="form-inline" action="Controller/ControllerMongoDB.php" method="post" name="addReception">
         <div class="form-group mb-2">
             <label for="produit" class="form-label">Produit</label>
             <input type="text" class="form-control" name="id_produit" id="produit">

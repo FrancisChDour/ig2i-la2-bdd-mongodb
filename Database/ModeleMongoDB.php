@@ -1,8 +1,7 @@
 <?php
+namespace App\Database;
 
-require("connectionMongoDB.php");
-
-class modeleMongoDB {
+class modeleMongoDB implements modeleMongoDBInterface {
 
     protected $connection;
 
@@ -15,8 +14,7 @@ class modeleMongoDB {
     }
 
     /**
-     * Normalize all receptions and list them in an array
-     * @return array
+     * @inheritDoc
      */
     public function listReceptions(): array
     {
@@ -37,7 +35,10 @@ class modeleMongoDB {
         return $result;
     }
 
-    public function addReception($data)
+    /**
+     * @inheritDoc
+     */
+    public function addReception($data) : int
     {
         return $this->connection->insertInto("reception",$data);
     }

@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Database;
+
+
 class confMongoDB {
 
     protected $hostname;

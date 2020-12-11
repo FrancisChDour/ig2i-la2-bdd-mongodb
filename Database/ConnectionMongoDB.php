@@ -1,8 +1,12 @@
 <?php
 
-require("confMongoDB.php");
+namespace App\Database;
 
-class connectionMongoDB {
+use MongoDB\Driver\Manager;
+use MongoDB\Driver\Query;
+use MongoDB\Driver\BulkWrite;
+
+class ConnectionMongoDB {
 
     protected $conf;
     protected $manager;
@@ -17,9 +21,9 @@ class connectionMongoDB {
         $this->conf = new confMongoDB($hostname,$database);
 
         if ($hostname !== null) {
-            $this->manager = new MongoDB\Driver\Manager($hostname);
+            $this->manager = new Manager($hostname);
         } else {
-            $this->manager = new MongoDB\Driver\Manager($this->conf->getHostname());
+            $this->manager = new Manager($this->conf->getHostname());
         }
     }
 
@@ -31,7 +35,7 @@ class connectionMongoDB {
     public function executeQuery($table, $filter = []): ?array
     {
         $namespace = $this->conf->getDatabase().".".$table;
-        $query = new MongoDB\Driver\Query($filter);
+        $query = new Query($filter);
 
         try {
         $res = $this->manager->executeQuery($namespace,$query);
@@ -46,8 +50,8 @@ class connectionMongoDB {
     public function insertInto($table,$data)
     {
         $namespace = $this->conf->getDatabase().".".$table;
-        $bulk = new MongoDB\Driver\BulkWrite;
-        $id = $bulk->insert($data);
+        $bulk = new BulkWrite;
+        $bulk->insert($data);
 
         $result = $this->manager->executeBulkWrite($namespace, $bulk);
         return $result->getInsertedCount();

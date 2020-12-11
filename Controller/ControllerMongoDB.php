@@ -1,12 +1,18 @@
 <?php
-require('modeleMongoDB.php');
+
+namespace App\Controller;
+
+use App\Database\modeleMongoDB;
+use DateTime;
+use MongoDB\BSON\ObjectId;
+
 if (!empty($_POST)) {
     $client = new modeleMongoDB();
     switch ($_POST['action']) {
         case 'addReception':
             $date = new DateTime();
             $data = array(
-                '_id' => new MongoDB\BSON\ObjectId(),
+                '_id' => new ObjectId(),
                 'id_produit' => $_POST['id_produit'],
                 'quantite_recue' => $_POST['quantite_recue'],
                 'id_entrepot' => $_POST['id_entrepot'],
