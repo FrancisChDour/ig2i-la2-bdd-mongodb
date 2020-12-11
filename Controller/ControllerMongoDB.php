@@ -26,7 +26,11 @@ if (!empty($_POST)) {
             break;
         case 'updateReception':
             array_pop($_POST);
-            $nbInsertedLine = $client->updateReception($_POST);
+            $data = [];
+            foreach ($_POST as $key => $datum) {
+                $data[$key] = htmlspecialchars($datum);
+            }
+            $nbInsertedLine = $client->updateReception($data);
             break;
         default:
             break;
