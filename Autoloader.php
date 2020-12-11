@@ -11,7 +11,8 @@ class Autoloader
 
     public static function autoload($class)
     {
-        $class = str_replace('App\\', '', $class);
-        require_once $class . '.php';
+        $class = str_replace('App', '', $class);
+//        var_dump(__DIR__. str_replace('\\', '/', $class) . '.php');
+        require_once __DIR__ . str_replace('\\', '/', $class) . '.php';
     }
 }
