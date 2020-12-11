@@ -23,13 +23,7 @@ class modeleMongoDB implements modeleMongoDBInterface {
         $receptions =  $this->connection->executeQuery("reception");
 
         foreach ($receptions as $reception) {
-            $result[] = [
-              "idReception" => $reception->_id,
-              "idProduit" => $reception->id_produit,
-              "idEntrepot" => $reception->id_entrepot,
-              "quantite" => $reception->quantite_recue,
-              "date" => $reception->date,
-            ];
+            $result[] = (array) $reception;
         }
 
         return $result;
