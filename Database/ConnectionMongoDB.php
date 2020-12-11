@@ -32,7 +32,7 @@ class ConnectionMongoDB {
      * @param array $filter
      * @return array|null
      */
-    public function executeQuery($table, $filter = []): ?array
+    public function executeQuery($table, $filter = []): array
     {
         $namespace = $this->conf->getDatabase().".".$table;
         $query = new Query($filter);
@@ -44,7 +44,7 @@ class ConnectionMongoDB {
         catch (\MongoDB\Driver\Exception\Exception $e) {
             echo $e->getMessage();
         }
-        return null;
+        return [];
     }
 
     public function insertInto($table,$data)

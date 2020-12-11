@@ -13,9 +13,9 @@ if (!empty($_POST)) {
             $date = new DateTime();
             $data = array(
                 '_id' => new ObjectId(),
-                'id_produit' => $_POST['id_produit'],
-                'quantite_recue' => $_POST['quantite_recue'],
-                'id_entrepot' => $_POST['id_entrepot'],
+                'id_produit' => htmlspecialchars($_POST['id_produit']),
+                'quantite_recue' => htmlspecialchars($_POST['quantite_recue']),
+                'id_entrepot' => htmlspecialchars($_POST['id_entrepot']),
                 'date' => $date->format('Y-m-d h:i:s')
             );
 
@@ -24,6 +24,6 @@ if (!empty($_POST)) {
         default:
             break;
     }
-    header('Location: http://la2-bdd-mongodb/');
+    header('Location: ../index.php');
     exit();
 }
