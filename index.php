@@ -41,11 +41,12 @@ $collection = $modele->listReceptions();
             <input type="text" class="form-control" name="id_entrepot" id="entrepot" placeholder="Entrepôt de réception">
         </div>
         <input type="hidden" name="action" value="addReception">
-        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        <button type="submit" class="btn btn-primary mb-2">Ajouter</button>
     </form>
 </div>
 
 <div class="container">
+    <h2>Liste des réceptions</h2>
     <table class="table">
         <thead>
         <tr>
