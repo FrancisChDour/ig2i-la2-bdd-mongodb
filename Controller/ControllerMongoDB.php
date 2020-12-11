@@ -24,6 +24,10 @@ if (!empty($_POST)) {
 
             $nbInsertedLine = $client->addReception($data);
             break;
+        case 'updateReception':
+            array_pop($_POST);
+            $nbInsertedLine = $client->updateReception($_POST);
+            break;
         default:
             break;
     }
